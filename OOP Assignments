@@ -1,0 +1,42 @@
+# Task 1
+class Father():
+    def __init__(self):
+        self.name = None
+        self.fname = None
+        self.height = None
+f = Father()
+print([i for i in dir(f) if '__'not in i])
+
+class Mother():
+    def __init__(self):
+        self.name = None
+        self.language = None
+        self.complexion = None
+m = Mother()
+print([i for i in dir(m) if '__'not in i])
+
+class Child():
+    def __init__(self, Father, Mother):
+        super().__init__()
+        Father.__init__(self)
+        Mother.__init__(self)
+        self.name = None
+        self.height = None
+	self.education = None
+c = Child(Father,Mother)
+print([i for i in dir(c) if '__'not in i])
+ 
+ #Task 2:
+ 
+Operator overloading
+
+class Game():
+    def __init__(self, score):
+        self.score = score
+    def __add__(self, others):
+        return self.score + others.score
+
+rizwan = Game(60)
+others = Game(130)
+
+print(f"Total score of Pakistan is {rizwan + others}")
